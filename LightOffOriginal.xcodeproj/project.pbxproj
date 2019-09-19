@@ -8,14 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		0734CA882333F977001EF9E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0734CA872333F977001EF9E9 /* AppDelegate.swift */; };
-		0734CA8A2333F977001EF9E9 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0734CA892333F977001EF9E9 /* GameScene.sks */; };
-		0734CA8C2333F977001EF9E9 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0734CA8B2333F977001EF9E9 /* Actions.sks */; };
 		0734CA8E2333F977001EF9E9 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0734CA8D2333F977001EF9E9 /* GameScene.swift */; };
 		0734CA902333F977001EF9E9 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0734CA8F2333F977001EF9E9 /* GameViewController.swift */; };
 		0734CA932333F977001EF9E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0734CA912333F977001EF9E9 /* Main.storyboard */; };
 		0734CA952333F979001EF9E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0734CA942333F979001EF9E9 /* Assets.xcassets */; };
 		0734CA982333F979001EF9E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0734CA962333F979001EF9E9 /* LaunchScreen.storyboard */; };
 		0734CAA32333F979001EF9E9 /* LightOffOriginalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0734CAA22333F979001EF9E9 /* LightOffOriginalTests.swift */; };
+		0734CAAE2333FEEC001EF9E9 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0734CAAD2333FEEC001EF9E9 /* Room.swift */; };
+		0734CAB023340015001EF9E9 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0734CAAF23340015001EF9E9 /* Character.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,8 +31,6 @@
 /* Begin PBXFileReference section */
 		0734CA842333F977001EF9E9 /* LightOffOriginal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LightOffOriginal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0734CA872333F977001EF9E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0734CA892333F977001EF9E9 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		0734CA8B2333F977001EF9E9 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
 		0734CA8D2333F977001EF9E9 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		0734CA8F2333F977001EF9E9 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		0734CA922333F977001EF9E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -42,6 +40,8 @@
 		0734CA9E2333F979001EF9E9 /* LightOffOriginalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LightOffOriginalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0734CAA22333F979001EF9E9 /* LightOffOriginalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightOffOriginalTests.swift; sourceTree = "<group>"; };
 		0734CAA42333F979001EF9E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0734CAAD2333FEEC001EF9E9 /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
+		0734CAAF23340015001EF9E9 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,14 +84,14 @@
 			isa = PBXGroup;
 			children = (
 				0734CA872333F977001EF9E9 /* AppDelegate.swift */,
-				0734CA892333F977001EF9E9 /* GameScene.sks */,
-				0734CA8B2333F977001EF9E9 /* Actions.sks */,
 				0734CA8D2333F977001EF9E9 /* GameScene.swift */,
 				0734CA8F2333F977001EF9E9 /* GameViewController.swift */,
 				0734CA912333F977001EF9E9 /* Main.storyboard */,
 				0734CA942333F979001EF9E9 /* Assets.xcassets */,
 				0734CA962333F979001EF9E9 /* LaunchScreen.storyboard */,
 				0734CA992333F979001EF9E9 /* Info.plist */,
+				0734CAAD2333FEEC001EF9E9 /* Room.swift */,
+				0734CAAF23340015001EF9E9 /* Character.swift */,
 			);
 			path = LightOffOriginal;
 			sourceTree = "<group>";
@@ -187,10 +187,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0734CA932333F977001EF9E9 /* Main.storyboard in Resources */,
-				0734CA8A2333F977001EF9E9 /* GameScene.sks in Resources */,
 				0734CA952333F979001EF9E9 /* Assets.xcassets in Resources */,
 				0734CA982333F979001EF9E9 /* LaunchScreen.storyboard in Resources */,
-				0734CA8C2333F977001EF9E9 /* Actions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,6 +208,8 @@
 			files = (
 				0734CA8E2333F977001EF9E9 /* GameScene.swift in Sources */,
 				0734CA902333F977001EF9E9 /* GameViewController.swift in Sources */,
+				0734CAB023340015001EF9E9 /* Character.swift in Sources */,
+				0734CAAE2333FEEC001EF9E9 /* Room.swift in Sources */,
 				0734CA882333F977001EF9E9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
