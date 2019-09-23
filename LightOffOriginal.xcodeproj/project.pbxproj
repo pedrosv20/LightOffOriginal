@@ -19,6 +19,7 @@
 		0734CAB4233853EF001EF9E9 /* Room1Touch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0734CAB3233853EF001EF9E9 /* Room1Touch.swift */; };
 		0734CAB623385549001EF9E9 /* ClockCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0734CAB523385549001EF9E9 /* ClockCharacter.swift */; };
 		0734CAB8233859BC001EF9E9 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0734CAB7233859BC001EF9E9 /* GameScene.sks */; };
+		076CF13023398DF100ED054A /* Room2Touch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076CF12F23398DF100ED054A /* Room2Touch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		0734CAB3233853EF001EF9E9 /* Room1Touch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room1Touch.swift; sourceTree = "<group>"; };
 		0734CAB523385549001EF9E9 /* ClockCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockCharacter.swift; sourceTree = "<group>"; };
 		0734CAB7233859BC001EF9E9 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		076CF12F23398DF100ED054A /* Room2Touch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room2Touch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 			children = (
 				0734CAAD2333FEEC001EF9E9 /* Room.swift */,
 				0734CAB3233853EF001EF9E9 /* Room1Touch.swift */,
+				076CF12F23398DF100ED054A /* Room2Touch.swift */,
 			);
 			path = Rooms;
 			sourceTree = "<group>";
@@ -237,6 +240,7 @@
 				0734CA902333F977001EF9E9 /* GameViewController.swift in Sources */,
 				0734CAB623385549001EF9E9 /* ClockCharacter.swift in Sources */,
 				0734CAB023340015001EF9E9 /* Character.swift in Sources */,
+				076CF13023398DF100ED054A /* Room2Touch.swift in Sources */,
 				0734CAAE2333FEEC001EF9E9 /* Room.swift in Sources */,
 				0734CA882333F977001EF9E9 /* AppDelegate.swift in Sources */,
 			);

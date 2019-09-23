@@ -12,7 +12,7 @@ import SpriteKit
 class Room1Touch : Room {
     
     
-    override func switchOff() {
+    override func switchOff() { // 1 touch
         
         isOn = false
         self.blackBackground.isHidden = false

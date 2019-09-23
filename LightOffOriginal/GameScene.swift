@@ -18,11 +18,15 @@ class GameScene: SKScene {
     override func didMove(to view: SKView) {
         
         let novoQuarto = Room1Touch(backgroundNode: SKSpriteNode(imageNamed: "white"), blackBackground: SKSpriteNode(imageNamed: "black"),size: CGSize(width: 100, height: 100), center: CGPoint(x: 0, y: 0), characters: [])
+        let novoQuarto2 = Room2Touch(backgroundNode: SKSpriteNode(imageNamed: "white"), blackBackground: SKSpriteNode(imageNamed: "black"),size: CGSize(width: 100, height: 100), center: CGPoint(x: 150, y: 0 ), characters: [])
+
         
-        var character = ClockCharacter(skin: SKSpriteNode(imageNamed: "black"), room:  novoQuarto)
-        novoQuarto.characters.append(character)
+//        var character = ClockCharacter(skin: SKSpriteNode(imageNamed: "black"), room:  novoQuarto)
+//        novoQuarto.characters.append(character)
         self.addChild(novoQuarto.backgroundNode)
+        self.addChild(novoQuarto2.backgroundNode)
         roomList.append(novoQuarto)
+        roomList.append(novoQuarto2)
        
     }
     
@@ -31,6 +35,7 @@ class GameScene: SKScene {
     func touchDown(atPoint pos : CGPoint) {
         for room in roomList {
             if room.backgroundNode.contains(pos) {
+                print(room)
                 if room.isOn {
                     room.switchOff()
                 } else {
