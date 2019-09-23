@@ -17,7 +17,7 @@ class Room {
     var blackBackground : SKSpriteNode! // same size of backgroundNode, black color
     var size : CGSize!
     var center : CGPoint!
-    
+    var timer : Timer!
     init(backgroundNode: SKSpriteNode, blackBackground: SKSpriteNode, size: CGSize, center: CGPoint, characters: [Character]) {
         
         self.backgroundNode = backgroundNode
@@ -37,6 +37,7 @@ class Room {
     }
     
     func switchOff() {
+        
         
     }
     

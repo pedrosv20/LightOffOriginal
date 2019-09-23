@@ -13,7 +13,6 @@ class ClockCharacter : Character {
     
     override func switchOn() {
         
-        
     }
     
     override func switchOff() {

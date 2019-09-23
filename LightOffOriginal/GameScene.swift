@@ -12,6 +12,8 @@ import GameplayKit
 class GameScene: SKScene {
     
     var roomList: [Room] = []
+    var tick = 0
+    var maxTick = 60
     
     override func didMove(to view: SKView) {
         
@@ -66,11 +68,15 @@ class GameScene: SKScene {
     
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
-        
-//        for room in roomList {
-//            if !room.isOn {
-//                print("boneco entra em açao ") // dispara flag boneco e só reseta quando ele ligar a luz de volta
+//        if tick < maxTick {
+//            tick += 1
+//        } else {
+//            for room in roomList {
+//                if !room.isOn {
+//                    room.characters[0].switchOn()
+//                }
 //            }
+//            tick = 0
 //        }
     }
 }
