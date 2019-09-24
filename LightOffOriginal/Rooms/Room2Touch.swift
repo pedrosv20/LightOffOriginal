@@ -20,33 +20,33 @@ class Room2Touch : Room{
             self.backgroundNode.colorBlendFactor = 1
             self.backgroundNode.color = .gray
             
+            self.timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: false, block: { (Timer) in
+                self.backgroundNode.colorBlendFactor = 0
+                self.backgroundNode.color = .white
+                self.touches = 0
+            })
+            
         }
         
         if touches == 2 {
+            timer?.invalidate()
             self.isOn = false
             self.blackBackground.isHidden = false
+            self.characters.first?.action()
         }
-        
-        self.timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: false, block: { (Timer) in
-            self.backgroundNode.color = .white
-            self.backgroundNode.colorBlendFactor = 0
-            self.touches = 0
-            self.switchOn()
-        })
-        
-        
-        
-        
     }
     
     override func switchOn() {
+        super.switchOn()
+        
         isOn = true
         self.touches = 0
-        if self.timer != nil {
-            timer.invalidate()
-        }
-        
+        self.backgroundNode.color = .white
+        self.backgroundNode.colorBlendFactor = 0
         self.blackBackground.isHidden = true
+
+        
+        
     }
     
     override func toggleLight() {

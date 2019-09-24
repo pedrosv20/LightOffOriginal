@@ -11,15 +11,20 @@ import SpriteKit
 
 class ClockCharacter : Character {
     
-    override func switchOn() {
+    override func action() {
         
+        if !room.isOn {
+            
+            timer = Timer.scheduledTimer(withTimeInterval: 1.5, repeats: false, block: { (Timer) in
+                self.room.switchOn()
+                print("ligou")
+            })
+        }
     }
     
-    override func switchOff() {
-
+    override func stopAction() {
+        timer?.invalidate()
     }
     
-    override func toggle() {
-        
-    }
+    
 }

@@ -25,6 +25,7 @@ class Room {
         self.backgroundNode.position = center
         
         self.blackBackground = blackBackground
+        self.blackBackground.zPosition = 10
         self.blackBackground.size = size
         self.blackBackground.isHidden = true
         self.backgroundNode.addChild(blackBackground)
@@ -33,7 +34,7 @@ class Room {
     }
     
     func switchOn() {
-        
+        characters.first?.stopAction()
     }
     
     func switchOff() {

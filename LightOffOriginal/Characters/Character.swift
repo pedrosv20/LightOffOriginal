@@ -20,15 +20,11 @@ class Character {
         self.room = room
     }
     
-    func switchOn() {
+    func action() {
         
     }
     
-    func switchOff() {
-        
-    }
-    
-    func toggle() {
+    func stopAction() {
         
     }
 }

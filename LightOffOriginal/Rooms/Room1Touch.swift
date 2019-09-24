@@ -13,20 +13,14 @@ class Room1Touch : Room {
     
     
     override func switchOff() { // 1 touch
-        
         isOn = false
         self.blackBackground.isHidden = false
+        self.characters.first?.action()
         
-        self.timer = Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { (Timer) in
-            self.switchOn()
-        }
     }
     
     override func switchOn() {
-        
-        if timer != nil {
-            timer.invalidate()
-        }
+        super.switchOn()
         isOn = true
         self.blackBackground.isHidden = true
     }
