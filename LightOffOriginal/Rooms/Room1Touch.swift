@@ -11,12 +11,12 @@ import SpriteKit
 
 class Room1Touch : Room {
     
+
     
     override func switchOff() { // 1 touch
         isOn = false
         self.blackBackground.isHidden = false
         self.characters.first?.action()
-        
     }
     
     override func switchOn() {
@@ -35,3 +35,5 @@ class Room1Touch : Room {
     }
     
 }
+
+

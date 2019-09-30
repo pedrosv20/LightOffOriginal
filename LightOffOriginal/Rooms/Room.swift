@@ -18,6 +18,7 @@ class Room {
     var size : CGSize!
     var center : CGPoint!
     var timer : Timer!
+    
     init(backgroundNode: SKSpriteNode, blackBackground: SKSpriteNode, size: CGSize, center: CGPoint, characters: [Character]) {
         
         self.backgroundNode = backgroundNode
@@ -29,6 +30,9 @@ class Room {
         self.blackBackground.size = size
         self.blackBackground.isHidden = true
         self.backgroundNode.addChild(blackBackground)
+        
+        self.size = size
+        self.center = center
         
         self.characters = characters
     }
