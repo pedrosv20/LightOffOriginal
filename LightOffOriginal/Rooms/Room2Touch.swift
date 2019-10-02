@@ -14,6 +14,7 @@ class Room2Touch : Room{
     var touches = 0
     
     override func switchOff() {
+        super.switchOff()
         self.touches += 1
         
         if touches == 1 {

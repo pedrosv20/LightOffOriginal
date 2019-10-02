@@ -14,6 +14,7 @@ class Room1Touch : Room {
 
     
     override func switchOff() { // 1 touch
+        super.switchOff()
         isOn = false
         self.blackBackground.isHidden = false
         self.characters.first?.action()

@@ -11,14 +11,15 @@ import SpriteKit
 
 class Character {
     
-    var skin : SKSpriteNode!
-    var room : Room!
-    var size: CGSize!
-    var timer : Timer!
+    var skin : SKSpriteNode
+    var room : Room
+    var size: CGSize
+    var timer : Timer?
     
     init(skin: SKSpriteNode, room: Room, size: CGSize) {
         self.skin = skin
         self.room = room
+        self.size = size
         self.skin.size = size
         self.skin.zPosition = 3
         self.room.blackBackground.addChild(skin)

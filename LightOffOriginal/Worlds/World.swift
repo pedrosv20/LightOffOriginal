@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SpriteKit
 
 class World {
     
@@ -17,11 +18,4 @@ class World {
         self.name = name
         self.levelCount = levelCount
     }
-    
-    func createLevel(i: Int) -> Room? {
-        //cria levles
-        return nil
-    }
-    
-    
 }

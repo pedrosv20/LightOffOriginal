@@ -14,20 +14,21 @@ class GameScene: SKScene {
     var roomList: [Room] = []
     var tick = 0
     var maxTick = 60
-    var levelBuilder = Level()
     var levelRooms: SKSpriteNode!
-    var world =  World1(name: "CURITIBA", levelCount: 8)
+    var backgroundNode = SKSpriteNode(imageNamed: "background")
+    var level = LevelBuilder()
     
     override func didMove(to view: SKView) {
-        //        var createdLevel =
-        //        roomList = Level.createLevel(level: .l1)
-        //
-        //        for i in roomList {
-        //            addChild(i.backgroundNode)
-        //        }
-        roomList = world.createLevel(i: 1)
+        backgroundNode.size = CGSize(width: self.frame.size.width, height: self.frame.size.height)
+        backgroundNode.zPosition = 0
+        roomList = level.generateLevel(w: .w1, l: .l1)
+        addChild(backgroundNode)
+        
+        
         for i in roomList {
-            addChild(i.backgroundNode)
+            i.backgroundNode.zPosition  = 1
+            i.blackBackground.zPosition = 2
+            backgroundNode.addChild(i.backgroundNode)
         }
         
         //classe cria quartos
@@ -38,17 +39,12 @@ class GameScene: SKScene {
         //gerenciador de fases
         
         
-        //        novoQuarto.characters.append(character)
-        //        self.addChild(novoQuarto.backgroundNode)
-        //        self.addChild(novoQuarto2.backgroundNode)
-        //        roomList.append(novoQuarto)
-        //        roomList.append(novoQuarto2)
-        
     }
     
     
     
     func touchDown(atPoint pos : CGPoint) {
+        
         for room in roomList{
             if room.backgroundNode.contains(pos) {
                 print(room)

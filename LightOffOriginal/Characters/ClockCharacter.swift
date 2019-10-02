@@ -15,7 +15,7 @@ class ClockCharacter : Character {
         
         if !room.isOn {
             
-            timer = Timer.scheduledTimer(withTimeInterval: 1.5, repeats: false, block: { (Timer) in
+            timer = Timer.scheduledTimer(withTimeInterval: Double.random(in: 0.4 ..< 4), repeats: false, block: { (Timer) in
                 self.room.switchOn()
                 print("ligou")
             })
