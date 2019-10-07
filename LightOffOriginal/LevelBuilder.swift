@@ -26,12 +26,13 @@ class LevelBuilder {
         case w1
     }
     
-    
+    // ou enum ou int se for mais facil para trocar de fase
     func generateLevel(w: WORLDS, l: LEVELS) -> [Room]{
         var room : [Room] = []
         
         switch (w){
             case .w1:
+                
                 var world = World1(name: "teste1", levelCount: 2)
                 switch(l){
                     case .l1:
@@ -43,7 +44,6 @@ class LevelBuilder {
                     
                     default: break
             }
-        default: break
         }
     return []
     }

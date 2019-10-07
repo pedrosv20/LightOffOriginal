@@ -7,6 +7,7 @@
 //
 
 import SpriteKit
+import UIKit
 import GameplayKit
 
 class GameScene: SKScene {
@@ -17,11 +18,27 @@ class GameScene: SKScene {
     var levelRooms: SKSpriteNode!
     var backgroundNode = SKSpriteNode(imageNamed: "background")
     var level = LevelBuilder()
+    var controller: GameViewController!
+    let progressView = UIProgressView(progressViewStyle: .bar)
+    
+    var timer = Timer()
+    
+    //TODO: Criar view de help para cada mundo .xib, falando sobre acender quartos torna o jogo mais dificil, desligar luzes e etc
+    
     
     override func didMove(to view: SKView) {
         backgroundNode.size = CGSize(width: self.frame.size.width, height: self.frame.size.height)
         backgroundNode.zPosition = 0
+        
         roomList = level.generateLevel(w: .w1, l: .l1)
+        
+        
+        progressView.center = CGPoint(x: 200, y: 100 )
+        progressView.setProgress(0, animated: true)
+        progressView.trackTintColor = .lightGray
+        progressView.tintColor = .blue
+        controller.view.addSubview(progressView)
+        
         addChild(backgroundNode)
         
         
@@ -30,13 +47,7 @@ class GameScene: SKScene {
             i.blackBackground.zPosition = 2
             backgroundNode.addChild(i.backgroundNode)
         }
-        
-        //classe cria quartos
-        
-        //fabrica
-        //gerenciador monta fase
-        
-        //gerenciador de fases
+
         
         
     }
@@ -47,7 +58,6 @@ class GameScene: SKScene {
         
         for room in roomList{
             if room.backgroundNode.contains(pos) {
-                print(room)
                 if room.isOn {
                     room.switchOff()
                 } else {
@@ -85,15 +95,25 @@ class GameScene: SKScene {
     
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
-        //        if tick < maxTick {
-        //            tick += 1
-        //        } else {
-        //            for room in roomList {
-        //                if !room.isOn {
-        //                    room.characters[0].switchOn()
-        //                }
-        //            }
-        //            tick = 0
-        //        }
+//
+        for room in roomList {
+            if room.isOn {
+                progressView.progress += 0.1/60
+                //TODO: ajustar calculo da progressView de acordo com quantidade de erros
+            }
+        }
+        
+        if progressView.progress > 0.50 {
+            progressView.tintColor = .yellow
+        }
+        
+        if progressView.progress > 0.70 {
+            progressView.tintColor = .red
+        }
+        
+        if progressView.progress == 1 {
+            progressView.progress = 0
+            progressView.tintColor = .blue
+        }
     }
 }
