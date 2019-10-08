@@ -16,15 +16,20 @@ class World1: World {
     
     override func getLevels() {
         let level1 = Level()
-            level1.LevelTime = 15
-            level1.roomArray = createLevel1()
-            self.levelArray.append(level1)
+        level1.LevelTime = 5.0
+        level1.roomArray = createLevel1()
+        self.levelArray.append(level1)
             
         
-            let level2 = Level()
-            level2.LevelTime = 20
-            level2.roomArray = createLevel2()
-            self.levelArray.append(level2)
+        let level2 = Level()
+        level2.LevelTime = 20.0
+        level2.roomArray = createLevel2()
+        self.levelArray.append(level2)
+            
+        let level3 = Level()
+        level3.LevelTime = 10.0
+        level3.roomArray = createLevel3()
+        self.levelArray.append(level3)
     }
     
     override func destroyLevels() {

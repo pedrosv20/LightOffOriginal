@@ -17,6 +17,13 @@ class GameOverViewController: UIViewController {
     }
     
 
+    @IBAction func playButton(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+        Model.shared.level += 1
+        if Model.shared.level > Model.shared.worldArray[Model.shared.world].levelArray.count {
+            Model.shared.level = 0
+        }
+    }
     /*
     // MARK: - Navigation
 

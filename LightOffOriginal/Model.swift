@@ -40,11 +40,10 @@ class Model {
         return rooms
     }
     
-    func destroyLevel(world: Int, level: Int) {
+    func destroyLevels(world: Int) {
         
-        if worldArray[world].levelArray[level] != nil {
-            worldArray[world].levelArray = []
-        }
+        worldArray[world].destroyLevels()
+    
     }
     
 }

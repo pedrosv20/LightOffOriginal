@@ -25,7 +25,6 @@
 		0734CAB4233853EF001EF9E9 /* Room1Touch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0734CAB3233853EF001EF9E9 /* Room1Touch.swift */; };
 		0734CAB623385549001EF9E9 /* ClockCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0734CAB523385549001EF9E9 /* ClockCharacter.swift */; };
 		0734CAB8233859BC001EF9E9 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0734CAB7233859BC001EF9E9 /* GameScene.sks */; };
-		0750A7D1233C27A200E5A163 /* LevelBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0750A7D0233C27A200E5A163 /* LevelBuilder.swift */; };
 		075D81E9234D00130083909F /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075D81E8234D00130083909F /* InitialViewController.swift */; };
 		075D81EB234D00730083909F /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075D81EA234D00730083909F /* GameOverViewController.swift */; };
 		076CF13023398DF100ED054A /* Room2Touch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076CF12F23398DF100ED054A /* Room2Touch.swift */; };
@@ -64,7 +63,6 @@
 		0734CAB3233853EF001EF9E9 /* Room1Touch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room1Touch.swift; sourceTree = "<group>"; };
 		0734CAB523385549001EF9E9 /* ClockCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockCharacter.swift; sourceTree = "<group>"; };
 		0734CAB7233859BC001EF9E9 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		0750A7D0233C27A200E5A163 /* LevelBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelBuilder.swift; sourceTree = "<group>"; };
 		075D81E8234D00130083909F /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		075D81EA234D00730083909F /* GameOverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
 		076CF12F23398DF100ED054A /* Room2Touch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room2Touch.swift; sourceTree = "<group>"; };
@@ -133,7 +131,6 @@
 				0734CAB7233859BC001EF9E9 /* GameScene.sks */,
 				0734CA8D2333F977001EF9E9 /* GameScene.swift */,
 				07041A38234BF3100084E24A /* Model.swift */,
-				0750A7D0233C27A200E5A163 /* LevelBuilder.swift */,
 				0711564A233E3E9F008C00A7 /* Worlds */,
 				0734CAB1233853B2001EF9E9 /* Rooms */,
 				0734CAB2233853BC001EF9E9 /* Characters */,
@@ -177,9 +174,9 @@
 		075D81EC234D00780083909F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				075D81E8234D00130083909F /* InitialViewController.swift */,
 				0734CA8F2333F977001EF9E9 /* GameViewController.swift */,
 				075D81EA234D00730083909F /* GameOverViewController.swift */,
-				075D81E8234D00130083909F /* InitialViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -294,7 +291,6 @@
 				0734CA8E2333F977001EF9E9 /* GameScene.swift in Sources */,
 				0734CA902333F977001EF9E9 /* GameViewController.swift in Sources */,
 				07041A39234BF3100084E24A /* Model.swift in Sources */,
-				0750A7D1233C27A200E5A163 /* LevelBuilder.swift in Sources */,
 				07115649233E3D8F008C00A7 /* World.swift in Sources */,
 				0734CAB623385549001EF9E9 /* ClockCharacter.swift in Sources */,
 				0734CAB023340015001EF9E9 /* Character.swift in Sources */,

@@ -11,7 +11,7 @@ import Foundation
 class Level {
     
     var roomArray : [Room] = []
-    var LevelTime : Int = 15
+    var LevelTime : Double!
     var background : String = ""
     
     

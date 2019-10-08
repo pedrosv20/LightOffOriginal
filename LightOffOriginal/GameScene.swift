@@ -17,18 +17,18 @@ class GameScene: SKScene {
     var maxTick = 60
     var levelRooms: SKSpriteNode!
     var backgroundNode = SKSpriteNode(imageNamed: "background")
-    var level = LevelBuilder()
     var controller: GameViewController!
     let progressView = UIProgressView(progressViewStyle: .bar)
     
     var timer : Timer?
        
-    var counter = 15 {
-        didSet {
-            self.label.text = "Time: \(self.counter)"
-        }
-    }
-    var label = SKLabelNode(text: "Score: 15")
+    var counter = 0
+//    {
+//        didSet {
+//            self.label.text = "Time: \(self.counter ?? 10)"
+//        }
+//    }
+    var label = SKLabelNode(text: "")
     var repeatForever : SKAction!
 
     
@@ -43,8 +43,8 @@ class GameScene: SKScene {
         backgroundNode.size = CGSize(width: self.frame.size.width, height: self.frame.size.height)
         backgroundNode.zPosition = 0
         
-        roomList = Model.shared.getLevel(world: 0, level: 0)
-        
+        roomList = Model.shared.getLevel(world: Model.shared.world, level: Model.shared.level)
+        counter = Int(Model.shared.worldArray[Model.shared.world].levelArray[Model.shared.level].LevelTime)
         
         progressView.center = CGPoint(x: 200, y: 100 )
         progressView.setProgress(0, animated: true)
@@ -53,7 +53,7 @@ class GameScene: SKScene {
         controller.view.addSubview(progressView)
         
         addChild(backgroundNode)
-        
+        self.label.text = "Time: \(self.counter)"
         
         for i in roomList {
             i.backgroundNode.zPosition  = 1
@@ -65,18 +65,18 @@ class GameScene: SKScene {
         self.addChild(label)
         
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (Timer) in
+            
             self.counter -= 1
-            print(self.counter)
+            self.label.text = "Time: \(self.counter)"
+            
         })
         
         
         self.label.zPosition = 10
         
     }
-    
-    
+  
 
-    
     func touchDown(atPoint pos : CGPoint) {
         for room in roomList{
             if room.backgroundNode.contains(pos) {
@@ -117,39 +117,42 @@ class GameScene: SKScene {
     
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
-//
+//        if tick < maxTick {
+//            tick += 1
+//        }else {
+//            print("teste : \(1.0/5.0/2.0/60.0)")
+//            tick = 0
+//        }
+        
         for room in roomList {
             if room.isOn {
-                progressView.progress += (0.075)/60
-                //TODO: ajustar calculo da progressView de acordo com quantidade de erros
+                let time = Model.shared.worldArray[Model.shared.world].levelArray[Model.shared.level].LevelTime
+                progressView.progress +=  Float(1.0 / time! / Double(roomList.count) / 60.0)
+                
             }
         }
         
         if progressView.progress > 0.50 {
             progressView.tintColor = .yellow
         }
-        else if progressView.progress > 0.70 {
+        if progressView.progress > 0.70 {
             progressView.tintColor = .red
         }
         
-        else if progressView.progress == 1 {
-            
+        if progressView.progress == 1 {
         }
         
-        if self.counter == 0 {
+        
+        
+        if self.counter < 0 {
+            counter = 0
             timer?.invalidate()
+            self.removeAllChildren()
+            self.removeAllActions()
+            self.removeFromParent()
+            backgroundNode.removeAllChildren()
+            self.controller.performSegue(withIdentifier: "gameOver", sender: self)
         }
-        
-//        if self.counter == 0 {
-//            counter = 15
-//            timer?.invalidate()
-//            self.removeAllChildren()
-//            self.removeAllActions()
-//            self.removeFromParent()
-//            backgroundNode.removeAllChildren()
-//            Model.shared.level = 1
-//            self.controller.performSegue(withIdentifier: "tey", sender: self)
-//        }
         
     }
 }
