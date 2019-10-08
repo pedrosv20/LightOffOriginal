@@ -13,39 +13,22 @@ class World1: World {
     
     
     
-    func createLevel(){
-        
-        let level1 = Level()
-        level1.LevelTime = 15
-        level1.roomArray = createLevel1()
-        self.levelArray.append(level1)
-        
     
-        let level2 = Level()
-        level2.LevelTime = 20
-        level2.roomArray = createLevel2()
-        self.levelArray.append(level2)
+    override func getLevels() {
+        let level1 = Level()
+            level1.LevelTime = 15
+            level1.roomArray = createLevel1()
+            self.levelArray.append(level1)
             
-            
-//        case 3:
-//            createLevel3()
-//            break
-//        case 4:
-//            createLevel4()
-//            break
-//        case 5:
-//            createLevel5()
-//            break
-//        case 6:
-//            createLevel6()
-//            break
-//        case 7:
-//            createLevel7()
-//            break
-//        case 8:
-//            createLevel8()
-//            break
         
+            let level2 = Level()
+            level2.LevelTime = 20
+            level2.roomArray = createLevel2()
+            self.levelArray.append(level2)
+    }
+    
+    override func destroyLevels() {
+        levelArray = []
     }
     
     func createLevel1() -> [Room]{

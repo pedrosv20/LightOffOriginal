@@ -39,11 +39,11 @@ class GameScene: SKScene {
     
     
     override func didMove(to view: SKView) {
+        
         backgroundNode.size = CGSize(width: self.frame.size.width, height: self.frame.size.height)
         backgroundNode.zPosition = 0
-//        print(Model.shared.worldArray.first?.levelArray.count)
         
-        roomList = (Model.shared.worldArray[Model.shared.world].levelArray[Model.shared.level].roomArray)
+        roomList = Model.shared.getLevel(world: 0, level: 0)
         
         
         progressView.center = CGPoint(x: 200, y: 100 )
@@ -78,8 +78,6 @@ class GameScene: SKScene {
 
     
     func touchDown(atPoint pos : CGPoint) {
-        print(Model.shared.worldArray.first?.name)
-        print(Model.shared.worldArray.first?.levelArray.first?.LevelTime)
         for room in roomList{
             if room.backgroundNode.contains(pos) {
                 if room.isOn {
@@ -130,13 +128,16 @@ class GameScene: SKScene {
         if progressView.progress > 0.50 {
             progressView.tintColor = .yellow
         }
-        
-        if progressView.progress > 0.70 {
+        else if progressView.progress > 0.70 {
             progressView.tintColor = .red
         }
         
-        if progressView.progress == 1 {
+        else if progressView.progress == 1 {
             
+        }
+        
+        if self.counter == 0 {
+            timer?.invalidate()
         }
         
 //        if self.counter == 0 {

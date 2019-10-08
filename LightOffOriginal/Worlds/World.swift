@@ -18,4 +18,8 @@ class World {
         self.name = name
         self.levelCount = levelCount
     }
+    
+    func getLevels() {}
+    
+    func destroyLevels(){}
 }

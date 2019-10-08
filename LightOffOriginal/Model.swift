@@ -16,16 +16,35 @@ class Model {
     
     var world = 0
     var level = 0
+    
     private init() {
         //Load worlds from json
-        var world1 = World1(name: "Curitiba", levelCount: 2)
-        world1.createLevel()
+        let world1 = World1(name: "Curitiba", levelCount: 2)
         worldArray.append(world1)
+        
+        
+//        if world1.levelArray = nil {
+//            world.createLevels
+//        }
+//        destroy levels
 //
 //        var world2 = World2(name: "SaoPaulo", levelCount: 2)
 //        world2.createLevel()
 //        worldArray.append(world2)
         
+    }
+    
+    func getLevel(world: Int, level: Int) -> [Room] {
+        worldArray[world].getLevels()
+        let rooms = worldArray[world].levelArray[level].roomArray
+        return rooms
+    }
+    
+    func destroyLevel(world: Int, level: Int) {
+        
+        if worldArray[world].levelArray[level] != nil {
+            worldArray[world].levelArray = []
+        }
     }
     
 }
