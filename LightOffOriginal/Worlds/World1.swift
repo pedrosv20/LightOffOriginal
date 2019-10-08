@@ -12,15 +12,21 @@ import SpriteKit
 class World1: World {
     
     
-    func createLevel(i: Int) -> [Room] {
+    
+    func createLevel(){
         
-        switch(i) {
-        case 1:
-            let rooms = self.createLevel1()
-            return rooms
-        case 2:
-            let rooms = self.createLevel2()
-            return rooms
+        let level1 = Level()
+        level1.LevelTime = 15
+        level1.roomArray = createLevel1()
+        self.levelArray.append(level1)
+        
+    
+        let level2 = Level()
+        level2.LevelTime = 20
+        level2.roomArray = createLevel2()
+        self.levelArray.append(level2)
+            
+            
 //        case 3:
 //            createLevel3()
 //            break
@@ -39,9 +45,7 @@ class World1: World {
 //        case 8:
 //            createLevel8()
 //            break
-        default:
-            return []
-        }
+        
     }
     
     func createLevel1() -> [Room]{

@@ -27,26 +27,27 @@ class LevelBuilder {
     }
     
     // ou enum ou int se for mais facil para trocar de fase
-    func generateLevel(w: WORLDS, l: LEVELS) -> [Room]{
-        var room : [Room] = []
-        
-        switch (w){
-            case .w1:
-                
-                var world = World1(name: "teste1", levelCount: 2)
-                switch(l){
-                    case .l1:
-                        room = world.createLevel(i: 1)
-                        return room
-                    case .l2:
-                        room = world.createLevel(i:2)
-                        return room
-                    
-                    default: break
-            }
-        }
-    return []
-    }
+//    func generateLevel(w: World, l: Level) -> Level{
+//        var room : [Room] = []
+//
+//        switch (w){
+//            case .w1:
+//
+//                var world = World1(name: "teste1", levelCount: 2)
+//                switch(l){
+//                    case .l1:
+//                        room = world.createLevel(i: 1)
+//
+//                        return room
+//                    case .l2:
+//                        room = world.createLevel(i:2)
+//                        return room
+//
+//                    default: break
+//            }
+//        }
+//    return []
+//    }
 }
 
 

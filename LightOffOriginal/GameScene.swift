@@ -21,7 +21,19 @@ class GameScene: SKScene {
     var controller: GameViewController!
     let progressView = UIProgressView(progressViewStyle: .bar)
     
-    var timer = Timer()
+    var timer : Timer?
+       
+    var counter = 15 {
+        didSet {
+            self.label.text = "Time: \(self.counter)"
+        }
+    }
+    var label = SKLabelNode(text: "Score: 15")
+    var repeatForever : SKAction!
+
+    
+
+    
     
     //TODO: Criar view de help para cada mundo .xib, falando sobre acender quartos torna o jogo mais dificil, desligar luzes e etc
     
@@ -29,8 +41,9 @@ class GameScene: SKScene {
     override func didMove(to view: SKView) {
         backgroundNode.size = CGSize(width: self.frame.size.width, height: self.frame.size.height)
         backgroundNode.zPosition = 0
+//        print(Model.shared.worldArray.first?.levelArray.count)
         
-        roomList = level.generateLevel(w: .w1, l: .l1)
+        roomList = (Model.shared.worldArray[Model.shared.world].levelArray[Model.shared.level].roomArray)
         
         
         progressView.center = CGPoint(x: 200, y: 100 )
@@ -47,15 +60,26 @@ class GameScene: SKScene {
             i.blackBackground.zPosition = 2
             backgroundNode.addChild(i.backgroundNode)
         }
-
         
+        self.label.fontSize = 60
+        self.addChild(label)
+        
+        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (Timer) in
+            self.counter -= 1
+            print(self.counter)
+        })
+        
+        
+        self.label.zPosition = 10
         
     }
     
     
+
     
     func touchDown(atPoint pos : CGPoint) {
-        
+        print(Model.shared.worldArray.first?.name)
+        print(Model.shared.worldArray.first?.levelArray.first?.LevelTime)
         for room in roomList{
             if room.backgroundNode.contains(pos) {
                 if room.isOn {
@@ -98,7 +122,7 @@ class GameScene: SKScene {
 //
         for room in roomList {
             if room.isOn {
-                progressView.progress += 0.1/60
+                progressView.progress += (0.075)/60
                 //TODO: ajustar calculo da progressView de acordo com quantidade de erros
             }
         }
@@ -112,8 +136,19 @@ class GameScene: SKScene {
         }
         
         if progressView.progress == 1 {
-            progressView.progress = 0
-            progressView.tintColor = .blue
+            
         }
+        
+//        if self.counter == 0 {
+//            counter = 15
+//            timer?.invalidate()
+//            self.removeAllChildren()
+//            self.removeAllActions()
+//            self.removeFromParent()
+//            backgroundNode.removeAllChildren()
+//            Model.shared.level = 1
+//            self.controller.performSegue(withIdentifier: "tey", sender: self)
+//        }
+        
     }
 }

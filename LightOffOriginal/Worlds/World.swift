@@ -13,7 +13,7 @@ class World {
     
     var name: String
     var levelCount: Int
-    
+    var levelArray : [Level] = []
     init(name: String, levelCount: Int) {
         self.name = name
         self.levelCount = levelCount
