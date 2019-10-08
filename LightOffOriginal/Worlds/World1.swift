@@ -78,24 +78,30 @@ class World1: World {
 
 
 
-        let room =  Room1Touch(backgroundNode: SKSpriteNode(imageNamed: "white"), blackBackground: SKSpriteNode(imageNamed: "black"), size: CGSize(width: 200, height: 200), center: CGPoint(x: -200, y: y), characters: [])
+        let room =  Room1Touch(backgroundNode: SKSpriteNode(imageNamed: "white"), blackBackground: SKSpriteNode(imageNamed: "black"), size: CGSize(width: 200, height: 200), center: CGPoint(x: -200, y: -400), characters: [])
         let _ = ClockCharacter(skin: SKSpriteNode(imageNamed: "white"), room: room, size: CGSize(width: 5, height: 5))
 
-        let room2 =  Room2Touch(backgroundNode: SKSpriteNode(imageNamed: "white"), blackBackground: SKSpriteNode(imageNamed: "black"), size: CGSize(width: 200, height: 200), center: CGPoint(x: 200, y: y), characters: [])
+        let room2 =  Room1Touch(backgroundNode: SKSpriteNode(imageNamed: "white"), blackBackground: SKSpriteNode(imageNamed: "black"), size: CGSize(width: 200, height: 200), center: CGPoint(x: 200, y: -400), characters: [])
         let _ = ClockCharacter(skin: SKSpriteNode(imageNamed: "white"), room: room2, size: CGSize(width: 5, height: 5))
 
-        let room3 =  Room1Touch(backgroundNode: SKSpriteNode(imageNamed: "white"), blackBackground: SKSpriteNode(imageNamed: "black"), size: CGSize(width: 200, height: 200), center: CGPoint(x: -75, y: 150), characters: [])
+        let room3 =  Room1Touch(backgroundNode: SKSpriteNode(imageNamed: "white"), blackBackground: SKSpriteNode(imageNamed: "black"), size: CGSize(width: 200, height: 200), center: CGPoint(x: -200, y: -100), characters: [])
 
         let _ = ClockCharacter(skin: SKSpriteNode(imageNamed: "white"), room: room3, size: CGSize(width: 5, height: 5))
 
-        let room4 =  Room1Touch(backgroundNode: SKSpriteNode(imageNamed: "white"), blackBackground: SKSpriteNode(imageNamed: "black"), size: CGSize(width: 200, height: 200), center: CGPoint(x: 75, y: 150), characters: [])
+        let room4 =  Room1Touch(backgroundNode: SKSpriteNode(imageNamed: "white"), blackBackground: SKSpriteNode(imageNamed: "black"), size: CGSize(width: 200, height: 200), center: CGPoint(x: 200, y: -100), characters: [])
 
         let _ = ClockCharacter(skin: SKSpriteNode(imageNamed: "white"), room: room4, size: CGSize(width: 5, height: 5))
+        
+        let room5 =  Room2Touch(backgroundNode: SKSpriteNode(imageNamed: "white"), blackBackground: SKSpriteNode(imageNamed: "black"), size: CGSize(width: 150, height: 150), center: CGPoint(x: 0, y: -250), characters: [])
+
+        let _ = ClockCharacter(skin: SKSpriteNode(imageNamed: "white"), room: room5, size: CGSize(width: 5, height: 5))
+
 
         array.append(room)
         array.append(room2)
         array.append(room3)
         array.append(room4)
+        array.append(room5)
 
 
         return array

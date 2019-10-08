@@ -39,7 +39,7 @@ class GameScene: SKScene {
     
     
     override func didMove(to view: SKView) {
-        
+        self.isPaused = false
         backgroundNode.size = CGSize(width: self.frame.size.width, height: self.frame.size.height)
         backgroundNode.zPosition = 0
         
@@ -127,7 +127,7 @@ class GameScene: SKScene {
         for room in roomList {
             if room.isOn {
                 let time = Model.shared.worldArray[Model.shared.world].levelArray[Model.shared.level].LevelTime
-                progressView.progress +=  Float(1.0 / time! / Double(roomList.count) / 60.0)
+                progressView.progress +=  Float(1.0 / time! / Double(roomList.count) / 60.0) // + dificuldade
                 
             }
         }
@@ -145,11 +145,16 @@ class GameScene: SKScene {
         
         
         if self.counter < 0 {
+            //TODO: Func gameover
             counter = 0
             timer?.invalidate()
+            
             self.removeAllChildren()
             self.removeAllActions()
             self.removeFromParent()
+            for i in roomList {
+                i.characters.first?.timer?.invalidate()
+            }
             backgroundNode.removeAllChildren()
             self.controller.performSegue(withIdentifier: "gameOver", sender: self)
         }

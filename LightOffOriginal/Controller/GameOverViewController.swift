@@ -24,6 +24,11 @@ class GameOverViewController: UIViewController {
             Model.shared.level = 0
         }
     }
+    
+    @IBAction func restartButton(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 
